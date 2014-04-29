@@ -122,12 +122,12 @@
 			children = (
 				1C1BA24F190FA21700B8BFC5 /* AppDelegate.h */,
 				1C1BA250190FA21700B8BFC5 /* AppDelegate.m */,
-				1C1BA255190FA21700B8BFC5 /* Images.xcassets */,
-				1C1BA252190FA21700B8BFC5 /* SuperDB.xcdatamodeld */,
-				1C1BA247190FA21700B8BFC5 /* Supporting Files */,
-				1C1BA273190FA24A00B8BFC5 /* SuperDB.storyboard */,
 				1C1BA278190FAA6E00B8BFC5 /* HeroListController.h */,
 				1C1BA279190FAA6E00B8BFC5 /* HeroListController.m */,
+				1C1BA255190FA21700B8BFC5 /* Images.xcassets */,
+				1C1BA273190FA24A00B8BFC5 /* SuperDB.storyboard */,
+				1C1BA252190FA21700B8BFC5 /* SuperDB.xcdatamodeld */,
+				1C1BA247190FA21700B8BFC5 /* Supporting Files */,
 			);
 			path = SuperDB;
 			sourceTree = "<group>";
@@ -459,6 +459,7 @@
 				1C1BA26F190FA21700B8BFC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C1BA270190FA21700B8BFC5 /* Build configuration list for PBXNativeTarget "SuperDBTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +468,7 @@
 				1C1BA272190FA21700B8BFC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

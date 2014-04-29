@@ -23,7 +23,13 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSInteger selectedTab=[defaults integerForKey:kSelectedTabDefaultsKey];
+    UITabBarItem *item=self.heroTabBar.items[selectedTab];
+    [self.heroTabBar setSelectedItem:item];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,19 +37,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+#pragma mark - UITabBarDelegate
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSUInteger tabIndex=[tabBar.items indexOfObject:item];
+    [defaults setInteger:tabIndex forKey:kSelectedTabDefaultsKey];
+    [defaults synchronize];
+    
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
     return 0;
 }
@@ -108,4 +121,6 @@
 }
 */
 
+- (IBAction)addHero:(id)sender {
+}
 @end

@@ -61,6 +61,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zTI-fZ-74f" id="jpk-HR-Fzy"/>
+                                    <outlet property="delegate" destination="zTI-fZ-74f" id="vbu-B7-FHS"/>
+                                </connections>
                             </tableView>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6an-md-9dp">
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
@@ -70,11 +74,24 @@
                                     <tabBarItem title="By Name" image="name_icon" id="rWs-5K-GTc"/>
                                     <tabBarItem title="By Secret Identity" image="secret_icon" id="HW1-Th-0Ex"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="zTI-fZ-74f" id="0AZ-uG-kPj"/>
+                                </connections>
                             </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uHS-lF-RIJ"/>
+                    <navigationItem key="navigationItem" id="uHS-lF-RIJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="M7B-NC-T29">
+                            <connections>
+                                <action selector="addHero:" destination="zTI-fZ-74f" id="aoc-aO-PXp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="heroTabBar" destination="6an-md-9dp" id="i1V-fn-l9w"/>
+                        <outlet property="heroTableView" destination="WtW-fd-4UP" id="h3C-1O-gLy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3PH-th-zI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
