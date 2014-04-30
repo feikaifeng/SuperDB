@@ -24,6 +24,8 @@
 		1C1BA26A190FA21700B8BFC5 /* SuperDBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1BA269190FA21700B8BFC5 /* SuperDBTests.m */; };
 		1C1BA274190FA24A00B8BFC5 /* SuperDB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1BA273190FA24A00B8BFC5 /* SuperDB.storyboard */; };
 		1C1BA27A190FAA6E00B8BFC5 /* HeroListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1BA279190FAA6E00B8BFC5 /* HeroListController.m */; };
+		1CF1974C1910C09100AD3004 /* HeroDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1974B1910C09100AD3004 /* HeroDetailController.m */; };
+		1CF1974E1910C44100AD3004 /* HeroDetailConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1974D1910C44100AD3004 /* HeroDetailConfiguration.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,9 @@
 		1C1BA273190FA24A00B8BFC5 /* SuperDB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SuperDB.storyboard; sourceTree = "<group>"; };
 		1C1BA278190FAA6E00B8BFC5 /* HeroListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroListController.h; sourceTree = "<group>"; };
 		1C1BA279190FAA6E00B8BFC5 /* HeroListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroListController.m; sourceTree = "<group>"; };
+		1CF1974A1910C09100AD3004 /* HeroDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroDetailController.h; sourceTree = "<group>"; };
+		1CF1974B1910C09100AD3004 /* HeroDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroDetailController.m; sourceTree = "<group>"; };
+		1CF1974D1910C44100AD3004 /* HeroDetailConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HeroDetailConfiguration.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +133,9 @@
 				1C1BA273190FA24A00B8BFC5 /* SuperDB.storyboard */,
 				1C1BA252190FA21700B8BFC5 /* SuperDB.xcdatamodeld */,
 				1C1BA247190FA21700B8BFC5 /* Supporting Files */,
+				1CF1974A1910C09100AD3004 /* HeroDetailController.h */,
+				1CF1974B1910C09100AD3004 /* HeroDetailController.m */,
+				1CF1974D1910C44100AD3004 /* HeroDetailConfiguration.plist */,
 			);
 			path = SuperDB;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF1974E1910C44100AD3004 /* HeroDetailConfiguration.plist in Resources */,
 				1C1BA274190FA24A00B8BFC5 /* SuperDB.storyboard in Resources */,
 				1C1BA24B190FA21700B8BFC5 /* InfoPlist.strings in Resources */,
 				1C1BA256190FA21700B8BFC5 /* Images.xcassets in Resources */,
@@ -260,6 +269,7 @@
 				1C1BA254190FA21700B8BFC5 /* SuperDB.xcdatamodeld in Sources */,
 				1C1BA27A190FAA6E00B8BFC5 /* HeroListController.m in Sources */,
 				1C1BA251190FA21700B8BFC5 /* AppDelegate.m in Sources */,
+				1CF1974C1910C09100AD3004 /* HeroDetailController.m in Sources */,
 				1C1BA24D190FA21700B8BFC5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

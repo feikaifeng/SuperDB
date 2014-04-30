@@ -8,6 +8,7 @@
 
 #import "HeroListController.h"
 #import "AppDelegate.h"
+#import "HeroDetailController.h"
 
 @interface HeroListController ()
 
@@ -159,7 +160,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -167,8 +168,22 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"HeroDetailSegue"]) {
+        if ([sender isKindOfClass:[NSManagedObject class]]) {
+            HeroDetailController *detailController=[segue destinationViewController];
+            detailController.hero=sender;
+        }else{
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Hero Detail Error" message:@"Error trying to show hero Detail" delegate:self cancelButtonTitle:@"Aw,nuts" otherButtonTitles: nil];
+            [alert show];
+        }
+    }
 }
-*/
+
+#pragma mark - UITableView Delegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSManagedObject *selectHero=[self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"HeroDetailSegue" sender:selectHero];
+}
 #pragma mark - FetchedResultsController Porperty
 -(NSFetchedResultsController *)fetchedResultsController{
     if (_fetchedResultsController !=nil) {
@@ -278,7 +293,7 @@
     
     NSEntityDescription *entity=[[self.fetchedResultsController fetchRequest] entity];
     
-    [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:managedObjectContext];
+    NSManagedObject *newHero=[NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:managedObjectContext];
     
     NSError *error=nil;
     
@@ -287,8 +302,10 @@
         
         [alert show];
     }
+    
+    [self performSegueWithIdentifier:@"HeroDetailSegue" sender:newHero];
 }
-
+#pragma mark -
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated{
     [super setEditing:editing animated:animated];
     self.addButton.enabled=!editing;
