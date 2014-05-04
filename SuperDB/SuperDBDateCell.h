@@ -6,7 +6,6 @@
 //  Copyright (c) 2014年 symg. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "SuperDBEditCell.h"
 
 @interface SuperDBDateCell : SuperDBEditCell

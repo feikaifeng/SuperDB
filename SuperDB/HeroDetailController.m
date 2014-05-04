@@ -100,7 +100,11 @@
         cell=[cell initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellClassName];
     }
     // Configure the cell...
-
+    NSArray *values=[row valueForKey:@"values"];
+    if (values!=nil) {
+        [cell performSelector:@selector(setValues:) withObject:values];
+    }
+    
 
     cell.key=[row valueForKey:@"key"];
     cell.label.text=[row valueForKey:@"label"];
