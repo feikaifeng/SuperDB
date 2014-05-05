@@ -65,6 +65,7 @@
 		1C1BA279190FAA6E00B8BFC5 /* HeroListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroListController.m; sourceTree = "<group>"; };
 		1C503B0A1915D3CF00BA19FB /* SuperDBPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperDBPickerCell.h; sourceTree = "<group>"; };
 		1C503B0B1915D3CF00BA19FB /* SuperDBPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperDBPickerCell.m; sourceTree = "<group>"; };
+		1C503B0D1915E03100BA19FB /* SuperDB 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SuperDB 2.xcdatamodel"; sourceTree = "<group>"; };
 		1CF1974A1910C09100AD3004 /* HeroDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroDetailController.h; sourceTree = "<group>"; };
 		1CF1974B1910C09100AD3004 /* HeroDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroDetailController.m; sourceTree = "<group>"; };
 		1CF1974D1910C44100AD3004 /* HeroDetailConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HeroDetailConfiguration.plist; sourceTree = "<group>"; };
@@ -504,6 +505,7 @@
 		1C1BA252190FA21700B8BFC5 /* SuperDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1C503B0D1915E03100BA19FB /* SuperDB 2.xcdatamodel */,
 				1C1BA253190FA21700B8BFC5 /* SuperDB.xcdatamodel */,
 			);
 			currentVersion = 1C1BA253190FA21700B8BFC5 /* SuperDB.xcdatamodel */;
