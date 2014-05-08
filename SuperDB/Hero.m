@@ -3,7 +3,7 @@
 //  SuperDB
 //
 //  Created by feikaifeng on 14-5-8.
-//  Copyright (c) 2014年 symg. All rights reserved.
+//  Copyright (c) 2014年 feikaifeng. All rights reserved.
 //
 
 #import "Hero.h"

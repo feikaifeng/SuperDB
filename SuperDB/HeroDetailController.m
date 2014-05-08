@@ -3,7 +3,7 @@
 //  SuperDB
 //
 //  Created by feikaifeng on 14-4-30.
-//  Copyright (c) 2014年 symg. All rights reserved.
+//  Copyright (c) 2014年 feikaifeng. All rights reserved.
 //
 
 #import "HeroDetailController.h"
@@ -104,10 +104,7 @@
         
     }
     // Configure the cell...
-    
-    
-    
-    
+
     NSArray *values=[row valueForKey:@"values"];
     if (values!=nil) {
         [cell performSelector:@selector(setValues:) withObject:values];
@@ -177,7 +174,10 @@
     [self setEditing:NO animated:YES];
     
     for (SuperDBEditCell *cell in [self.tableView visibleCells]) {
-        [self.hero setValue:[cell value] forKey:[cell key]];
+        if ([cell idEditable]) {
+            [self.hero setValue:[cell value] forKey:[cell key]];
+        }
+        
     }
     
     NSError *error=nil;

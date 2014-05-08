@@ -3,7 +3,7 @@
 //  SuperDB
 //
 //  Created by feikaifeng on 14-4-29.
-//  Copyright (c) 2014年 symg. All rights reserved.
+//  Copyright (c) 2014年 feikaifeng. All rights reserved.
 //
 
 #import "AppDelegate.h"

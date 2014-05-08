@@ -38,7 +38,7 @@
 				</dict>
 				<dict>
 					<key>class</key>
-					<string>SuperDBEditCell</string>
+					<string>SuperDBCell</string>
 					<key>key</key>
 					<string>age</string>
 					<key>label</key>
