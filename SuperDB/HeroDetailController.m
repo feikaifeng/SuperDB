@@ -91,15 +91,23 @@
     
     NSString *cellClassName=[row valueForKey:@"class"];
     
+    
     SuperDBEditCell *cell = [tableView dequeueReusableCellWithIdentifier:cellClassName];
+    
     if (cell==nil) {
         
         Class cellClass=NSClassFromString(cellClassName);
         cell=[cellClass alloc];
         
         cell=[cell initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellClassName];
+        cell.hero=self.hero;
+        
     }
     // Configure the cell...
+    
+    
+    
+    
     NSArray *values=[row valueForKey:@"values"];
     if (values!=nil) {
         [cell performSelector:@selector(setValues:) withObject:values];

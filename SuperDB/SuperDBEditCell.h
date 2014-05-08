@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SuperDBEditCell : UITableViewCell
+@interface SuperDBEditCell : UITableViewCell<UITextFieldDelegate,UIAlertViewDelegate>
 
 @property (strong, nonatomic) UILabel *label;
 @property (strong, nonatomic) UITextField *textField;
 
 @property (strong, nonatomic) NSString *key;
 @property (strong, nonatomic) id value;
+@property (strong, nonatomic) NSManagedObject *hero;
+
+-(void)validate;
+
 @end

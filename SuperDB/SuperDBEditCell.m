@@ -33,6 +33,7 @@
         self.textField.enabled=NO;
         self.textField.font=[UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
         self.textField.text=@"Title";
+        self.textField.delegate=self;
         [self.contentView addSubview:self.textField];
     }
     return self;
@@ -60,7 +61,44 @@
     return self.textField.text;
 }
 -(void)setValue:(id)value{
+    
     self.textField.text=value;
+}
+
+#pragma mark - UITextFieldDelegate
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    [self validate];
+}
+#pragma mark - UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        [self setValue:[self.hero valueForKey:self.key]];
+    }else{
+        [self.textField becomeFirstResponder];
+    }
+}
+#pragma mark - 
+-(void)validate{
+    id val = self.value;
+    NSError *error;
+    if (![self.hero validateValue:&val forKey:self.key error:&error]) {
+        NSString *message=nil;
+        
+        if ([[error domain] isEqualToString:NSCocoaErrorDomain]) {
+            NSDictionary *userInfo=[error userInfo];
+            
+            message=[NSString stringWithFormat:NSLocalizedString(@"Validation error on %@\rFailure Reason: %@", @"Validation error on %@\rFailure Reason: %@"),[userInfo valueForKey:NSValidationKeyErrorKey],[error localizedFailureReason]];
+        }else{
+            message=[error localizedDescription];
+
+        }
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Validation Error", @"Validation Error")
+                                                      message:message
+                                                     delegate:self
+                                            cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel")
+                                            otherButtonTitles:NSLocalizedString(@"Fix", @"Fix"), nil];
+        [alert show];
+    }
 }
 
 

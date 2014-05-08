@@ -37,6 +37,14 @@
 					<string>Birthdate</string>
 				</dict>
 				<dict>
+					<key>class</key>
+					<string>SuperDBEditCell</string>
+					<key>key</key>
+					<string>age</string>
+					<key>label</key>
+					<string>Age</string>
+				</dict>
+				<dict>
 					<key>values</key>
 					<array>
 						<string>Male</string>
@@ -48,6 +56,14 @@
 					<string>SuperDBPickerCell</string>
 					<key>label</key>
 					<string>Sex</string>
+				</dict>
+				<dict>
+					<key>class</key>
+					<string>SuperDBEditCell</string>
+					<key>key</key>
+					<string>favoriteColor</string>
+					<key>label</key>
+					<string>Color</string>
 				</dict>
 			</array>
 		</dict>
