@@ -48,7 +48,7 @@
     }
 }
 #pragma mark - Instance Methods
--(BOOL)idEditable{
+-(BOOL)isEditable{
     return NO;
 }
 @end

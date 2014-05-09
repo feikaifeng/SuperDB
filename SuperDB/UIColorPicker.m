@@ -52,6 +52,9 @@
     return self;
 }
 
+//-(void)willMoveToSuperview:(UIView *)newSuperview{
+//    self.frame=newSuperview.bounds
+//}
 #pragma mark - Property Overrides
 -(void)setColor:(UIColor *)color{
     _color =color;
@@ -83,13 +86,18 @@
     
     return label;
 }
-/*
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame=self.bounds;
+    gradient.colors=[NSArray  arrayWithObjects:(__bridge id)[UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0].CGColor ,(__bridge id)[UIColor colorWithRed:0.79 green:0.79 blue:0.79 alpha:1.0].CGColor, nil];
+    [self.layer insertSublayer:gradient atIndex:0];
+    
 }
-*/
+
 
 @end

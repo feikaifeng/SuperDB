@@ -16,6 +16,6 @@
 @property (strong, nonatomic) id value;
 @property (strong, nonatomic) NSManagedObject *hero;
 
--(BOOL)idEditable;
+-(BOOL)isEditable;
 
 @end

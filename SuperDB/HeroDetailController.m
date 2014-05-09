@@ -115,6 +115,7 @@
     cell.label.text=[row valueForKey:@"label"];
     cell.textField.text=[[self.hero valueForKey:[row valueForKey:@"key"]] description];
     
+    
     return cell;
 }
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -174,7 +175,7 @@
     [self setEditing:NO animated:YES];
     
     for (SuperDBEditCell *cell in [self.tableView visibleCells]) {
-        if ([cell idEditable]) {
+        if ([cell isEditable]) {
             [self.hero setValue:[cell value] forKey:[cell key]];
         }
         

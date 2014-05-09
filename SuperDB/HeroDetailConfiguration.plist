@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>class</key>
-					<string>SuperDBEditCell</string>
+					<string>SuperDBColorCell</string>
 					<key>key</key>
 					<string>favoriteColor</string>
 					<key>label</key>

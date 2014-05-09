@@ -7,6 +7,9 @@
 //
 
 #import "SuperDBEditCell.h"
+
+static NSDictionary *__CoreDataErrors;
+
 @implementation SuperDBEditCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -19,6 +22,11 @@
 
     }
     return self;
+}
+
++(void)initialize{
+    NSURL *url=[[NSBundle mainBundle] URLForResource:@"CoreDataErrors" withExtension:@"plist"];
+    __CoreDataErrors=[NSDictionary dictionaryWithContentsOfURL:url];
 }
 
 - (void)awakeFromNib
@@ -39,7 +47,7 @@
     self.textField.enabled=editing;
 }
 #pragma mark - Instance Methods
--(BOOL)idEditable{
+-(BOOL)isEditable{
     return YES;
 }
 #pragma mark - UITextFieldDelegate
@@ -64,7 +72,10 @@
         if ([[error domain] isEqualToString:NSCocoaErrorDomain]) {
             NSDictionary *userInfo=[error userInfo];
             
-            message=[NSString stringWithFormat:NSLocalizedString(@"Validation error on %@\rFailure Reason: %@", @"Validation error on %@\rFailure Reason: %@"),[userInfo valueForKey:NSValidationKeyErrorKey],[error localizedFailureReason]];
+            NSString *errorCodeStr=[NSString stringWithFormat:@"%d",[error code]];
+            NSString *errorMessage=[__CoreDataErrors valueForKey:errorCodeStr];
+            
+            message=[NSString stringWithFormat:NSLocalizedString(@"Validation error on %@\rFailure Reason: %@", @"Validation error on %@\rFailure Reason: %@"),[userInfo valueForKey:NSValidationKeyErrorKey],errorMessage];
         }else{
             message=[error localizedDescription];
 
