@@ -28,9 +28,7 @@
     
     if (self) {
         self.textField.clearButtonMode=UITextFieldViewModeNever;
-        
         self.pickerView=[[UIPickerView alloc] initWithFrame:CGRectZero];
-        
         self.pickerView.dataSource=self;
         self.pickerView.delegate=self;
         self.pickerView.showsSelectionIndicator=YES;

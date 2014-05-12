@@ -18,6 +18,9 @@
 @dynamic sex;
 @dynamic favoriteColor;
 
+@dynamic powers;
+@dynamic olderHeroes,youngeHeroes,sameSexHeroes,oppositeSexHeroes;
+
 -(void)awakeFromInsert{
     self.favoriteColor=[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     

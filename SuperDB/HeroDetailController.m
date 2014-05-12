@@ -8,10 +8,13 @@
 
 #import "HeroDetailController.h"
 #import "SuperDBEditCell.h"
+#import "HeroDetailConfiguration.h"
 
 @interface HeroDetailController ()
 
-@property (strong,nonatomic) NSArray *sections;
+//@property (strong,nonatomic) NSArray *sections;
+
+@property (strong,nonatomic) HeroDetailConfiguration *config;
 @property (strong,nonatomic) UIBarButtonItem *saveButton;
 @property (strong,nonatomic) UIBarButtonItem *backButton;
 @property (strong,nonatomic) UIBarButtonItem *cancelButton;
@@ -46,10 +49,11 @@
     self.backButton=self.navigationItem.leftBarButtonItem;
     self.cancelButton=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     
-    NSString *path=[[NSBundle mainBundle] pathForResource:@"HeroDetailConfiguration" ofType:@"plist"];
-    NSDictionary *plist=[NSDictionary dictionaryWithContentsOfFile:path];
-    self.sections=[plist valueForKey:@"sections"];
-    
+//    NSString *path=[[NSBundle mainBundle] pathForResource:@"HeroDetailConfiguration" ofType:@"plist"];
+//    NSDictionary *plist=[NSDictionary dictionaryWithContentsOfFile:path];
+//    self.sections=[plist valueForKey:@"sections"];
+
+    self.config=[[HeroDetailConfiguration alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,37 +64,63 @@
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated{
     [super setEditing:editing animated:animated];
     
+    [self.tableView reloadData];
+    
     self.navigationItem.rightBarButtonItem=(editing)? self.saveButton:self.editButtonItem;
     self.navigationItem.leftBarButtonItem=(editing)? self.cancelButton:self.backButton;
 }
 #pragma mark - Table view data source
-/*
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    //return self.sections.count;
+    return [self.config numberOfSections];
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+//    NSDictionary *sectionDict=[self.sections objectAtIndex:section];
+//    NSArray *rows=[sectionDict valueForKey:@"rows"];
+//    return rows.count;
+    
+//    return [self.config numberOfRowsInSection:section];
+    NSInteger rowCount=[self.config numberOfRowsInSection:section];
+    if ([self.config isDynamicSection:section]) {
+        NSString *key=[self.config dynamicAttributeKeyForSection:section];
+        NSSet *attributeSet=[self.hero mutableSetValueForKey:key];
+        
+        rowCount=(self.editing) ? attributeSet.count+1 : attributeSet.count;
+    }
+    
+    return rowCount;
+
 }
-*/
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//    NSDictionary *sectionDict=[self.sections objectAtIndex:section];
+//    
+//    return [sectionDict valueForKey:@"header"];
+    return [self.config headerInSection:section];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSUInteger sectionIndex=[indexPath section];
-    NSUInteger rowIndex=[indexPath row];
+//    NSUInteger sectionIndex=[indexPath section];
+//    NSUInteger rowIndex=[indexPath row];
+//    
+//    NSDictionary *section=self.sections[sectionIndex];
+//    NSArray *rows=[section valueForKey:@"rows"];
+//    NSDictionary *row=rows[rowIndex];
     
-    NSDictionary *section=self.sections[sectionIndex];
-    NSArray *rows=[section valueForKey:@"rows"];
-    NSDictionary *row=rows[rowIndex];
-    
-    NSString *cellClassName=[row valueForKey:@"class"];
-    
+//    NSDictionary *row=[self.config rowForIndexPath:indexPath];
+//    NSString *cellClassName=[row valueForKey:@"class"];
+
+    NSString *cellClassName=[self.config cellClassnameForIndexPath:indexPath];
     
     SuperDBEditCell *cell = [tableView dequeueReusableCellWithIdentifier:cellClassName];
     
@@ -105,16 +135,20 @@
     }
     // Configure the cell...
 
-    NSArray *values=[row valueForKey:@"values"];
+//    NSArray *values=[row valueForKey:@"values"];
+    NSArray *values=[self.config valuesForIndexPath:indexPath];
     if (values!=nil) {
         [cell performSelector:@selector(setValues:) withObject:values];
     }
     
 
-    cell.key=[row valueForKey:@"key"];
-    cell.label.text=[row valueForKey:@"label"];
-    cell.textField.text=[[self.hero valueForKey:[row valueForKey:@"key"]] description];
-    
+//    cell.key=[row valueForKey:@"key"];
+//    cell.label.text=[row valueForKey:@"label"];
+//    cell.value=[[self.hero valueForKey:[row valueForKey:@"key"]] description];
+
+    cell.key=[self.config attributeKeyForIndexPath:indexPath];
+    cell.label.text=[self.config labelForIndexForIndexPath:indexPath];
+    cell.value=[self.hero valueForKey:[self.config attributeKeyForIndexPath:indexPath]];
     
     return cell;
 }
