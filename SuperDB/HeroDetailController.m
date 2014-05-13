@@ -8,6 +8,7 @@
 
 #import "HeroDetailController.h"
 #import "ManagedObjectConfiguration.h"
+#import "PowerViewController.h"
 
 @interface HeroDetailController ()
 
@@ -36,8 +37,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self removeRelationshipObjectInIndexPath:indexPath];
+    }else if (editingStyle == UITableViewCellEditingStyleInsert){
+        NSManagedObject *newObject=[self addRelationshipObjectForSection:indexPath.section];
+        
+        [self performSegueWithIdentifier:@"PowerViewSegue" sender:newObject];
+    }
+    
+    [super tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+}
 
-/*
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    NSString *key=[self.config attributeKeyForIndexPath:indexPath];
+    NSMutableSet *relationshipSet=[self.managedObject mutableSetValueForKey:key];
+    NSManagedObject *relationshipObject=[[relationshipSet allObjects] objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:@"PowerViewSegue" sender:relationshipObject];
+    
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -45,7 +65,21 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"PowerViewSegue"]) {
+        if ([sender isKindOfClass:[NSManagedObject class]]) {
+            PowerViewController *detailController=[segue destinationViewController];
+            detailController.managedObject=sender;
+        }
+    }else{
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Power Error", @"Power Error")
+                                                      message:NSLocalizedString(@"Error trying to show Power detail", @"Error trying to show Power detail")
+                                                     delegate:self
+                                            cancelButtonTitle:NSLocalizedString(@"AW,Nuts", @"AW,Nuts")
+                                            otherButtonTitles: nil];
+        [alert show];
+        
+    }
 }
-*/
+
 
 @end

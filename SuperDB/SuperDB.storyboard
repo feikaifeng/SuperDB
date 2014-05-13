@@ -124,10 +124,42 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Qnl-3u-RRL"/>
+                    <connections>
+                        <segue destination="lOJ-83-0ZZ" kind="push" identifier="PowerViewSegue" id="Vde-ws-gJP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sU2-z0-Igt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037" y="-23"/>
+        </scene>
+        <!--Power View Controller-->
+        <scene sceneID="VHc-JZ-Cob">
+            <objects>
+                <tableViewController id="lOJ-83-0ZZ" customClass="PowerViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="LUg-zj-4jZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="UHQ-LI-IO4">
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UHQ-LI-IO4" id="xQO-lI-EOp">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lOJ-83-0ZZ" id="OJq-5M-aDC"/>
+                            <outlet property="delegate" destination="lOJ-83-0ZZ" id="59I-gt-vWf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bRa-a7-h61"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ue4-iG-MX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1515" y="-23"/>
         </scene>
     </scenes>
     <resources>

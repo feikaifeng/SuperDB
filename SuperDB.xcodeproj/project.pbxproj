@@ -30,6 +30,8 @@
 		1C503B0C1915D3CF00BA19FB /* SuperDBPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C503B0B1915D3CF00BA19FB /* SuperDBPickerCell.m */; };
 		1C6216EF191B2BF0009267C2 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6216EE191B2BF0009267C2 /* Hero.m */; };
 		1C64C8CD19220F30002CD02A /* HeroDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C64C8CC19220F30002CD02A /* HeroDetailController.m */; };
+		1C64C8D019221445002CD02A /* PowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C64C8CF19221445002CD02A /* PowerViewController.m */; };
+		1C64C8D21922155E002CD02A /* PowerViewConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C64C8D11922155E002CD02A /* PowerViewConfiguration.plist */; };
 		1C659197191CB9E6009EB917 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C659196191CB9E6009EB917 /* QuartzCore.framework */; };
 		1C659199191CBDF3009EB917 /* CoreDataErrors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C659198191CBDF3009EB917 /* CoreDataErrors.plist */; };
 		1C67745C1920A75200143FBD /* Power.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C67745B1920A75200143FBD /* Power.m */; };
@@ -85,6 +87,9 @@
 		1C6216EE191B2BF0009267C2 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
 		1C64C8CB19220F30002CD02A /* HeroDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroDetailController.h; sourceTree = "<group>"; };
 		1C64C8CC19220F30002CD02A /* HeroDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroDetailController.m; sourceTree = "<group>"; };
+		1C64C8CE19221445002CD02A /* PowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerViewController.h; sourceTree = "<group>"; };
+		1C64C8CF19221445002CD02A /* PowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerViewController.m; sourceTree = "<group>"; };
+		1C64C8D11922155E002CD02A /* PowerViewConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PowerViewConfiguration.plist; sourceTree = "<group>"; };
 		1C659196191CB9E6009EB917 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1C659198191CBDF3009EB917 /* CoreDataErrors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CoreDataErrors.plist; sourceTree = "<group>"; };
 		1C6774591920A0B500143FBD /* SuperDB 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SuperDB 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -175,6 +180,8 @@
 				1CF1974B1910C09100AD3004 /* ManagedObjectController.m */,
 				1C64C8CB19220F30002CD02A /* HeroDetailController.h */,
 				1C64C8CC19220F30002CD02A /* HeroDetailController.m */,
+				1C64C8CE19221445002CD02A /* PowerViewController.h */,
+				1C64C8CF19221445002CD02A /* PowerViewController.m */,
 				1C4BBF48191B693000D3EB77 /* SuperDBCell.h */,
 				1C4BBF49191B693000D3EB77 /* SuperDBCell.m */,
 				1CF1974F1910D85F00AD3004 /* SuperDBEditCell.h */,
@@ -206,6 +213,7 @@
 				1C1BA249190FA21700B8BFC5 /* InfoPlist.strings */,
 				1C1BA24C190FA21700B8BFC5 /* main.m */,
 				1C1BA24E190FA21700B8BFC5 /* SuperDB-Prefix.pch */,
+				1C64C8D11922155E002CD02A /* PowerViewConfiguration.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -303,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C64C8D21922155E002CD02A /* PowerViewConfiguration.plist in Resources */,
 				1CF1974E1910C44100AD3004 /* HeroDetailConfiguration.plist in Resources */,
 				1C1BA274190FA24A00B8BFC5 /* SuperDB.storyboard in Resources */,
 				1C659199191CBDF3009EB917 /* CoreDataErrors.plist in Resources */,
@@ -338,6 +347,7 @@
 				1C6216EF191B2BF0009267C2 /* Hero.m in Sources */,
 				1C1BA27A190FAA6E00B8BFC5 /* HeroListController.m in Sources */,
 				1C1BA251190FA21700B8BFC5 /* AppDelegate.m in Sources */,
+				1C64C8D019221445002CD02A /* PowerViewController.m in Sources */,
 				1C4BBF4A191B693000D3EB77 /* SuperDBCell.m in Sources */,
 				1CF1974C1910C09100AD3004 /* ManagedObjectController.m in Sources */,
 				1C1BA24D190FA21700B8BFC5 /* main.m in Sources */,
