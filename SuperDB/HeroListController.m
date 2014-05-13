@@ -8,7 +8,7 @@
 
 #import "HeroListController.h"
 #import "AppDelegate.h"
-#import "HeroDetailController.h"
+#import "ManagedObjectController.h"
 
 @interface HeroListController ()
 
@@ -170,8 +170,8 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"HeroDetailSegue"]) {
         if ([sender isKindOfClass:[NSManagedObject class]]) {
-            HeroDetailController *detailController=[segue destinationViewController];
-            detailController.hero=sender;
+            ManagedObjectController *detailController=[segue destinationViewController];
+            detailController.managedObject=sender;
         }else{
             UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Hero Detail Error" message:@"Error trying to show hero Detail" delegate:self cancelButtonTitle:@"Aw,nuts" otherButtonTitles: nil];
             [alert show];

@@ -29,11 +29,12 @@
 		1C4BBF50191B7BBC00D3EB77 /* SuperDBColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4BBF4F191B7BBC00D3EB77 /* SuperDBColorCell.m */; };
 		1C503B0C1915D3CF00BA19FB /* SuperDBPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C503B0B1915D3CF00BA19FB /* SuperDBPickerCell.m */; };
 		1C6216EF191B2BF0009267C2 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6216EE191B2BF0009267C2 /* Hero.m */; };
+		1C64C8CD19220F30002CD02A /* HeroDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C64C8CC19220F30002CD02A /* HeroDetailController.m */; };
 		1C659197191CB9E6009EB917 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C659196191CB9E6009EB917 /* QuartzCore.framework */; };
 		1C659199191CBDF3009EB917 /* CoreDataErrors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C659198191CBDF3009EB917 /* CoreDataErrors.plist */; };
 		1C67745C1920A75200143FBD /* Power.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C67745B1920A75200143FBD /* Power.m */; };
-		1C67745F1920B3AB00143FBD /* HeroDetailConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C67745E1920B3AB00143FBD /* HeroDetailConfiguration.m */; };
-		1CF1974C1910C09100AD3004 /* HeroDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1974B1910C09100AD3004 /* HeroDetailController.m */; };
+		1C67745F1920B3AB00143FBD /* ManagedObjectConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C67745E1920B3AB00143FBD /* ManagedObjectConfiguration.m */; };
+		1CF1974C1910C09100AD3004 /* ManagedObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1974B1910C09100AD3004 /* ManagedObjectController.m */; };
 		1CF1974E1910C44100AD3004 /* HeroDetailConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1974D1910C44100AD3004 /* HeroDetailConfiguration.plist */; };
 		1CF197511910D85F00AD3004 /* SuperDBEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF197501910D85F00AD3004 /* SuperDBEditCell.m */; };
 		1CF197541910E60900AD3004 /* SuperDBDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF197531910E60900AD3004 /* SuperDBDateCell.m */; };
@@ -82,15 +83,17 @@
 		1C503B0D1915E03100BA19FB /* SuperDB 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SuperDB 2.xcdatamodel"; sourceTree = "<group>"; };
 		1C6216ED191B2BF0009267C2 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
 		1C6216EE191B2BF0009267C2 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
+		1C64C8CB19220F30002CD02A /* HeroDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroDetailController.h; sourceTree = "<group>"; };
+		1C64C8CC19220F30002CD02A /* HeroDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroDetailController.m; sourceTree = "<group>"; };
 		1C659196191CB9E6009EB917 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1C659198191CBDF3009EB917 /* CoreDataErrors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CoreDataErrors.plist; sourceTree = "<group>"; };
 		1C6774591920A0B500143FBD /* SuperDB 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SuperDB 3.xcdatamodel"; sourceTree = "<group>"; };
 		1C67745A1920A75200143FBD /* Power.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Power.h; sourceTree = "<group>"; };
 		1C67745B1920A75200143FBD /* Power.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Power.m; sourceTree = "<group>"; };
-		1C67745D1920B3AB00143FBD /* HeroDetailConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroDetailConfiguration.h; sourceTree = "<group>"; };
-		1C67745E1920B3AB00143FBD /* HeroDetailConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroDetailConfiguration.m; sourceTree = "<group>"; };
-		1CF1974A1910C09100AD3004 /* HeroDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroDetailController.h; sourceTree = "<group>"; };
-		1CF1974B1910C09100AD3004 /* HeroDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroDetailController.m; sourceTree = "<group>"; };
+		1C67745D1920B3AB00143FBD /* ManagedObjectConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectConfiguration.h; sourceTree = "<group>"; };
+		1C67745E1920B3AB00143FBD /* ManagedObjectConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectConfiguration.m; sourceTree = "<group>"; };
+		1CF1974A1910C09100AD3004 /* ManagedObjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectController.h; sourceTree = "<group>"; };
+		1CF1974B1910C09100AD3004 /* ManagedObjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectController.m; sourceTree = "<group>"; };
 		1CF1974D1910C44100AD3004 /* HeroDetailConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HeroDetailConfiguration.plist; sourceTree = "<group>"; };
 		1CF1974F1910D85F00AD3004 /* SuperDBEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperDBEditCell.h; sourceTree = "<group>"; };
 		1CF197501910D85F00AD3004 /* SuperDBEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperDBEditCell.m; sourceTree = "<group>"; };
@@ -168,10 +171,10 @@
 				1C1BA273190FA24A00B8BFC5 /* SuperDB.storyboard */,
 				1C1BA252190FA21700B8BFC5 /* SuperDB.xcdatamodeld */,
 				1C1BA247190FA21700B8BFC5 /* Supporting Files */,
-				1CF1974A1910C09100AD3004 /* HeroDetailController.h */,
-				1CF1974B1910C09100AD3004 /* HeroDetailController.m */,
-				1C659198191CBDF3009EB917 /* CoreDataErrors.plist */,
-				1CF1974D1910C44100AD3004 /* HeroDetailConfiguration.plist */,
+				1CF1974A1910C09100AD3004 /* ManagedObjectController.h */,
+				1CF1974B1910C09100AD3004 /* ManagedObjectController.m */,
+				1C64C8CB19220F30002CD02A /* HeroDetailController.h */,
+				1C64C8CC19220F30002CD02A /* HeroDetailController.m */,
 				1C4BBF48191B693000D3EB77 /* SuperDBCell.h */,
 				1C4BBF49191B693000D3EB77 /* SuperDBCell.m */,
 				1CF1974F1910D85F00AD3004 /* SuperDBEditCell.h */,
@@ -182,8 +185,8 @@
 				1C4BBF4F191B7BBC00D3EB77 /* SuperDBColorCell.m */,
 				1C503B0A1915D3CF00BA19FB /* SuperDBPickerCell.h */,
 				1C503B0B1915D3CF00BA19FB /* SuperDBPickerCell.m */,
-				1C67745D1920B3AB00143FBD /* HeroDetailConfiguration.h */,
-				1C67745E1920B3AB00143FBD /* HeroDetailConfiguration.m */,
+				1C67745D1920B3AB00143FBD /* ManagedObjectConfiguration.h */,
+				1C67745E1920B3AB00143FBD /* ManagedObjectConfiguration.m */,
 				1C6216ED191B2BF0009267C2 /* Hero.h */,
 				1C6216EE191B2BF0009267C2 /* Hero.m */,
 				1C67745A1920A75200143FBD /* Power.h */,
@@ -197,6 +200,8 @@
 		1C1BA247190FA21700B8BFC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1C659198191CBDF3009EB917 /* CoreDataErrors.plist */,
+				1CF1974D1910C44100AD3004 /* HeroDetailConfiguration.plist */,
 				1C1BA248190FA21700B8BFC5 /* SuperDB-Info.plist */,
 				1C1BA249190FA21700B8BFC5 /* InfoPlist.strings */,
 				1C1BA24C190FA21700B8BFC5 /* main.m */,
@@ -322,8 +327,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF197541910E60900AD3004 /* SuperDBDateCell.m in Sources */,
-				1C67745F1920B3AB00143FBD /* HeroDetailConfiguration.m in Sources */,
+				1C67745F1920B3AB00143FBD /* ManagedObjectConfiguration.m in Sources */,
 				1C67745C1920A75200143FBD /* Power.m in Sources */,
+				1C64C8CD19220F30002CD02A /* HeroDetailController.m in Sources */,
 				1C4BBF4D191B753500D3EB77 /* UIColorPicker.m in Sources */,
 				1C503B0C1915D3CF00BA19FB /* SuperDBPickerCell.m in Sources */,
 				1C1BA254190FA21700B8BFC5 /* SuperDB.xcdatamodeld in Sources */,
@@ -333,7 +339,7 @@
 				1C1BA27A190FAA6E00B8BFC5 /* HeroListController.m in Sources */,
 				1C1BA251190FA21700B8BFC5 /* AppDelegate.m in Sources */,
 				1C4BBF4A191B693000D3EB77 /* SuperDBCell.m in Sources */,
-				1CF1974C1910C09100AD3004 /* HeroDetailController.m in Sources */,
+				1CF1974C1910C09100AD3004 /* ManagedObjectController.m in Sources */,
 				1C1BA24D190FA21700B8BFC5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

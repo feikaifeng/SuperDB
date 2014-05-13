@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HeroDetailConfiguration : NSObject
+@interface ManagedObjectConfiguration : NSObject
+
+
+-(id)initWithResource:(NSString *)resource;
 
 -(NSInteger) numberOfSections;
 -(NSInteger) numberOfRowsInSection:(NSInteger)section;
@@ -22,4 +25,6 @@
 
 -(BOOL)isDynamicSection:(NSInteger)section;
 -(NSString *)dynamicAttributeKeyForSection:(NSInteger)section;
+
+
 @end

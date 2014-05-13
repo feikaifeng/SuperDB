@@ -6,20 +6,20 @@
 //  Copyright (c) 2014年 symg. All rights reserved.
 //
 
-#import "HeroDetailConfiguration.h"
+#import "ManagedObjectConfiguration.h"
 
-@interface HeroDetailConfiguration ()
+@interface ManagedObjectConfiguration ()
 
 @property (strong, nonatomic) NSArray *sections;
 
 @end
 
-@implementation HeroDetailConfiguration
+@implementation ManagedObjectConfiguration
 
--(id)init{
+-(id)initWithResource:(NSString *)resource{
     self=[super init];
     if (self) {
-        NSURL *url=[[NSBundle mainBundle] URLForResource:@"HeroDetailConfiguration" withExtension:@"plist"];
+        NSURL *url=[[NSBundle mainBundle] URLForResource:resource withExtension:@"plist"];
         NSDictionary *plist=[NSDictionary dictionaryWithContentsOfURL:url];
         self.sections = [plist valueForKey:@"sections"];
     }
