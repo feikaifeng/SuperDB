@@ -29,6 +29,7 @@
 		1C4BBF50191B7BBC00D3EB77 /* SuperDBColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4BBF4F191B7BBC00D3EB77 /* SuperDBColorCell.m */; };
 		1C503B0C1915D3CF00BA19FB /* SuperDBPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C503B0B1915D3CF00BA19FB /* SuperDBPickerCell.m */; };
 		1C6216EF191B2BF0009267C2 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6216EE191B2BF0009267C2 /* Hero.m */; };
+		1C6471D719245D9500D1EEBD /* HeroReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6471D619245D9500D1EEBD /* HeroReportController.m */; };
 		1C64C8CD19220F30002CD02A /* HeroDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C64C8CC19220F30002CD02A /* HeroDetailController.m */; };
 		1C64C8D019221445002CD02A /* PowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C64C8CF19221445002CD02A /* PowerViewController.m */; };
 		1C64C8D21922155E002CD02A /* PowerViewConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C64C8D11922155E002CD02A /* PowerViewConfiguration.plist */; };
@@ -85,6 +86,8 @@
 		1C503B0D1915E03100BA19FB /* SuperDB 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SuperDB 2.xcdatamodel"; sourceTree = "<group>"; };
 		1C6216ED191B2BF0009267C2 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
 		1C6216EE191B2BF0009267C2 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
+		1C6471D519245D9500D1EEBD /* HeroReportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroReportController.h; sourceTree = "<group>"; };
+		1C6471D619245D9500D1EEBD /* HeroReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroReportController.m; sourceTree = "<group>"; };
 		1C64C8CB19220F30002CD02A /* HeroDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroDetailController.h; sourceTree = "<group>"; };
 		1C64C8CC19220F30002CD02A /* HeroDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroDetailController.m; sourceTree = "<group>"; };
 		1C64C8CE19221445002CD02A /* PowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerViewController.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				1C64C8CC19220F30002CD02A /* HeroDetailController.m */,
 				1C64C8CE19221445002CD02A /* PowerViewController.h */,
 				1C64C8CF19221445002CD02A /* PowerViewController.m */,
+				1C6471D519245D9500D1EEBD /* HeroReportController.h */,
+				1C6471D619245D9500D1EEBD /* HeroReportController.m */,
 				1C4BBF48191B693000D3EB77 /* SuperDBCell.h */,
 				1C4BBF49191B693000D3EB77 /* SuperDBCell.m */,
 				1CF1974F1910D85F00AD3004 /* SuperDBEditCell.h */,
@@ -342,6 +347,7 @@
 				1C4BBF4D191B753500D3EB77 /* UIColorPicker.m in Sources */,
 				1C503B0C1915D3CF00BA19FB /* SuperDBPickerCell.m in Sources */,
 				1C1BA254190FA21700B8BFC5 /* SuperDB.xcdatamodeld in Sources */,
+				1C6471D719245D9500D1EEBD /* HeroReportController.m in Sources */,
 				1CF197511910D85F00AD3004 /* SuperDBEditCell.m in Sources */,
 				1C4BBF50191B7BBC00D3EB77 /* SuperDBColorCell.m in Sources */,
 				1C6216EF191B2BF0009267C2 /* Hero.m in Sources */,

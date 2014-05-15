@@ -86,6 +86,53 @@
 				</dict>
 			</array>
 		</dict>
+		<dict>
+			<key>header</key>
+			<string>Reports</string>
+			<key>rows</key>
+			<array>
+				<dict>
+					<key>key</key>
+					<string>olderHeroes</string>
+					<key>class</key>
+					<string>SuperDBCell</string>
+					<key>label</key>
+					<string>Report</string>
+					<key>value</key>
+					<string>Older Heroes</string>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>youngHeroes</string>
+					<key>class</key>
+					<string>SuperDBCell</string>
+					<key>label</key>
+					<string>Report</string>
+					<key>value</key>
+					<string>Younger Heroes</string>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>sameSexHeroes</string>
+					<key>class</key>
+					<string>SuperDBCell</string>
+					<key>label</key>
+					<string>Report</string>
+					<key>value</key>
+					<string>Same Sex Heroes</string>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>oppositeSexHeroes</string>
+					<key>class</key>
+					<string>SuperDBCell</string>
+					<key>label</key>
+					<string>Report</string>
+					<key>value</key>
+					<string>Opposite Sex Heroes</string>
+				</dict>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

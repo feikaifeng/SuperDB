@@ -46,7 +46,7 @@
 }
 -(NSDictionary *)rowForIndexPath:(NSIndexPath *)indexPath{
     NSUInteger sectionIndex=[indexPath section];
-//    NSUInteger rowIndex=[indexPath row];
+
     NSUInteger rowIndex=([self isDynamicSection:sectionIndex]) ? 0 :[indexPath row];
     
     NSDictionary *section=self.sections[sectionIndex];

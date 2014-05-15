@@ -41,21 +41,12 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.saveButton=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
     
     self.backButton=self.navigationItem.leftBarButtonItem;
     self.cancelButton=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
-    
-//    NSString *path=[[NSBundle mainBundle] pathForResource:@"HeroDetailConfiguration" ofType:@"plist"];
-//    NSDictionary *plist=[NSDictionary dictionaryWithContentsOfFile:path];
-//    self.sections=[plist valueForKey:@"sections"];
 
-    //self.config=[[ManagedObjectConfiguration alloc] initWithResource:@"HeroDetailConfiguration"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,14 +55,12 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated{
-    //[super setEditing:editing animated:animated];
-    
+
     [self.tableView beginUpdates];
     
     [self updateDynamicSection:editing];
     
     [super setEditing:editing animated:animated];
-    //[self.tableView reloadData];
     
     [self.tableView endUpdates];
     
@@ -83,8 +72,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 
-    // Return the number of sections.
-    //return self.sections.count;
     return [self.config numberOfSections];
 }
 
@@ -92,12 +79,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
-    // Return the number of rows in the section.
-//    NSDictionary *sectionDict=[self.sections objectAtIndex:section];
-//    NSArray *rows=[sectionDict valueForKey:@"rows"];
-//    return rows.count;
-    
-//    return [self.config numberOfRowsInSection:section];
     NSInteger rowCount=[self.config numberOfRowsInSection:section];
     if ([self.config isDynamicSection:section]) {
         NSString *key=[self.config dynamicAttributeKeyForSection:section];
@@ -111,23 +92,13 @@
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//    NSDictionary *sectionDict=[self.sections objectAtIndex:section];
-//    
-//    return [sectionDict valueForKey:@"header"];
+
     return [self.config headerInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSUInteger sectionIndex=[indexPath section];
-//    NSUInteger rowIndex=[indexPath row];
-//    
-//    NSDictionary *section=self.sections[sectionIndex];
-//    NSArray *rows=[section valueForKey:@"rows"];
-//    NSDictionary *row=rows[rowIndex];
-    
-//    NSDictionary *row=[self.config rowForIndexPath:indexPath];
-//    NSString *cellClassName=[row valueForKey:@"class"];
+
 
     NSString *cellClassName=[self.config cellClassnameForIndexPath:indexPath];
     
@@ -144,20 +115,14 @@
     }
     // Configure the cell...
 
-//    NSArray *values=[row valueForKey:@"values"];
     NSArray *values=[self.config valuesForIndexPath:indexPath];
     if (values!=nil) {
         [cell performSelector:@selector(setValues:) withObject:values];
     }
-    
-
-//    cell.key=[row valueForKey:@"key"];
-//    cell.label.text=[row valueForKey:@"label"];
-//    cell.value=[[self.managedObject valueForKey:[row valueForKey:@"key"]] description];
 
     cell.key=[self.config attributeKeyForIndexPath:indexPath];
     cell.label.text=[self.config labelForIndexForIndexPath:indexPath];
-    //cell.value=[self.managedObject valueForKey:[self.config attributeKeyForIndexPath:indexPath]];
+
     if ([self.config isDynamicSection:[indexPath section]]) {
         NSString *key=[self.config attributeKeyForIndexPath:indexPath];
         NSMutableSet *relationshipSet=[self.managedObject mutableSetValueForKey:key];
@@ -174,7 +139,15 @@
         }
     }
     else{
-        cell.value=[self.managedObject valueForKey:[self.config attributeKeyForIndexPath:indexPath]];
+
+        NSString *value=[[self.config rowForIndexPath:indexPath] objectForKey:@"value"];
+        if (value !=nil) {
+            cell.value=value;
+            cell.accessoryType=UITableViewCellAccessoryDetailDisclosureButton;
+            cell.editingAccessoryType=UITableViewCellAccessoryDetailDisclosureButton;
+        }else{
+            cell.value=[self.managedObject valueForKey:[self.config attributeKeyForIndexPath:indexPath]];
+        }
     }
     
     return cell;
@@ -211,38 +184,6 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    NSString *key=[self.config attributeKeyForIndexPath:indexPath];
-    NSMutableSet *relationshipSet=[self.managedObject mutableSetValueForKey:key];
-    NSManagedObjectContext *managedObjectContext=[self.managedObject managedObjectContext];
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-
-        NSManagedObject *relationshipObject=[[relationshipSet allObjects] objectAtIndex:[indexPath row]];
-        [relationshipSet removeObject:relationshipObject];
-        
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-
-        NSEntityDescription *entity=[self.managedObject entity];
-        NSDictionary *relationships=[entity relationshipsByName];
-        NSRelationshipDescription *destRelationShip=[relationships objectForKey:key];
-        NSEntityDescription *destEntity=[destRelationShip destinationEntity];
-        NSManagedObject *relationshipObject=[NSEntityDescription insertNewObjectForEntityForName:[destEntity name] inManagedObjectContext:managedObjectContext];
-        [relationshipSet addObject:relationshipObject];
-    }
-    
-    NSError *error=nil;
-    if (![managedObjectContext save:&error]) {
-    
-        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error saving entity", @"Error saving entity")
-                                                      message:[NSString stringWithFormat:NSLocalizedString(@"Error was :%@ qutting.", @"Error was :%@ qutting."),[error localizedDescription]]
-                                                     delegate:self
-                                            cancelButtonTitle:NSLocalizedString(@"AW, Nuts", @"AW, Nuts")
-                                            otherButtonTitles: nil];
-        [alert show];
-    }
-    */
-    
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
@@ -290,11 +231,7 @@
         }
         
     }
-    
-//    NSError *error=nil;
-//    if (![self.managedObject.managedObjectContext save:&error]) {
-//        NSLog(@"Error saving:%@",[error localizedDescription]);
-//    }
+
     [self saveManagedObjectContext];
     
     [self.tableView reloadData];

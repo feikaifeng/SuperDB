@@ -9,6 +9,7 @@
 #import "HeroDetailController.h"
 #import "ManagedObjectConfiguration.h"
 #import "PowerViewController.h"
+#import "HeroReportController.h"
 
 @interface HeroDetailController ()
 
@@ -51,11 +52,23 @@
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSString *key=[self.config attributeKeyForIndexPath:indexPath];
-    NSMutableSet *relationshipSet=[self.managedObject mutableSetValueForKey:key];
-    NSManagedObject *relationshipObject=[[relationshipSet allObjects] objectAtIndex:indexPath.row];
     
-    [self performSegueWithIdentifier:@"PowerViewSegue" sender:relationshipObject];
+    NSEntityDescription *entity=[self.managedObject entity];
     
+    NSDictionary *properties=[entity propertiesByName];
+    
+    NSPropertyDescription *property=[properties objectForKey:key];
+    
+    if ([property isKindOfClass:[NSAttributeDescription class]]) {
+        NSMutableSet *relationshipSet=[self.managedObject mutableSetValueForKey:key];
+        NSManagedObject *relationshipObject=[[relationshipSet allObjects] objectAtIndex:indexPath.row];
+        
+        [self performSegueWithIdentifier:@"PowerViewSegue" sender:relationshipObject];
+    }else if ([property isKindOfClass:[NSFetchedPropertyDescription class]]){
+        NSArray *fetchedProperties=[self.managedObject valueForKey:key];
+        
+        [self performSegueWithIdentifier:@"ReportViewSegue" sender:fetchedProperties];
+    }
 }
 
 #pragma mark - Navigation
@@ -70,7 +83,15 @@
             PowerViewController *detailController=[segue destinationViewController];
             detailController.managedObject=sender;
         }
-    }else{
+    }else if ([segue.identifier isEqualToString:@"ReportViewSegue"]){
+        if ([sender isKindOfClass:[NSArray class]]) {
+            HeroReportController *reportController=segue.destinationViewController;
+            reportController.heroes=sender;
+        }
+    }
+    
+    
+    else{
         UIAlertView *alert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Power Error", @"Power Error")
                                                       message:NSLocalizedString(@"Error trying to show Power detail", @"Error trying to show Power detail")
                                                      delegate:self
