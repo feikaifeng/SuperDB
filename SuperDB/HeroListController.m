@@ -290,6 +290,7 @@
     
     NSManagedObjectContext *managedObjectContext=[self.fetchedResultsController managedObjectContext];
     
+    
     NSEntityDescription *entity=[[self.fetchedResultsController fetchRequest] entity];
     
     NSManagedObject *newHero=[NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:managedObjectContext];
